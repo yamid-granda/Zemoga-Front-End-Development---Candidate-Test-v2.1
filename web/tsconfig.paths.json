@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@Rulings/*": ["src/modules/Rulings/*"],
+      "@/*": ["src/*"]
+    }
+  }
+}
