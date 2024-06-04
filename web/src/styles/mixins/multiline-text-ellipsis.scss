@@ -1,7 +1,7 @@
-@mixin multiline-text-ellipsis {
+@mixin multiline-text-ellipsis($line-clamp: 2) {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: $line-clamp;
   -webkit-box-orient: vertical;
 }
