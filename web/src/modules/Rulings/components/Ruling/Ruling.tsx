@@ -56,8 +56,6 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
           className="rt-ruling__picture-img"
           src={`img/${picture}`}
           alt={name}
-          width={300}
-          height={300}
         />
       </div>
 
