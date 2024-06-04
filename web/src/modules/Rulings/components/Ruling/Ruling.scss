@@ -43,6 +43,7 @@ $ruling-opacity: 0.6;
   position: absolute;
   left: 0;
   top: 95px;
+  pointer-events: none;
 }
 
 .rt-ruling__description {

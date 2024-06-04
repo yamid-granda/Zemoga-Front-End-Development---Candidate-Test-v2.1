@@ -43,6 +43,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
   const statusButtonProps: IButtonProps = {
     size: 'sm',
     tabIndex: -1,
+    role: 'presentation',
     ...progressLeft > 0.5
       ? { icon: 'thumbs-up' }
       : { icon: 'thumbs-down', state: 'warning' },
