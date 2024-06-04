@@ -1,0 +1,10 @@
+.rt-previous-rulings__items {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.rt-previous-rulings__item {
+  flex-shrink: 0;
+}

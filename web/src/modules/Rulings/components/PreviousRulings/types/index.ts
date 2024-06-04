@@ -1,16 +1,5 @@
-export interface ICelebrityVotesConfig {
-  positive: number
-  negative: number
-}
+import type { ICelebrity } from "@Rulings/types";
 
-export interface ICelebrity {
-  name: string
-  description: string
-  category: string
-  picture: string
-  lastUpdated: string
-  votes: ICelebrityVotesConfig
-}
 
 export interface IPreviousRulingsProps {
   celebrities: ICelebrity[]

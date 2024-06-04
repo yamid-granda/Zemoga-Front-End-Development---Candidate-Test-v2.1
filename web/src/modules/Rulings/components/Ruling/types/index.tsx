@@ -1,3 +1,3 @@
-import type { ICelebrity } from "@Rulings/types";
+import type { ICelebrity } from '@Rulings/types'
 
 export interface IRulingProps extends ICelebrity {}
