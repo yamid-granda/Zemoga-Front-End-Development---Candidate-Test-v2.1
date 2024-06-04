@@ -1,5 +1,15 @@
 $size: 300px;
 
+.rt-previous-rulings__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.rt-previous-rulings__title {
+  margin: 5px 0 29px;
+}
+
 .rt-previous-rulings__items {
   display: flex;
   gap: 12px;
