@@ -1,0 +1,60 @@
+$size: 38px;
+$size-sm: 30px;
+
+.rt-button {
+  background-color: $c-primary;
+  color: $c-white;
+  outline: none;
+  cursor: pointer;
+  min-height: $size;
+  padding: 0 20px;
+  font-size: $fs-base;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $c-primary-hover;
+  }
+
+  &:focus {
+    outline: 1px solid $c-white;
+  }
+}
+
+.rt-button--warning {
+  background-color: $c-warning;
+
+  &:hover {
+    background-color: $c-warning-hover;
+  }
+  
+}
+
+.rt-button--outline {
+  background-color: transparent;
+  color: $c-white;
+  border: 1px solid $c-white;
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:focus {
+    outline: 1px solid $c-white;
+  }
+}
+
+.rt-button--sm {
+  min-height: $size-sm;
+}
+
+.rt-button--icon {
+  padding: 0;
+
+  &.rt-button--sm {
+    height: $size-sm;
+    width: $size-sm;
+  }
+}
