@@ -30,21 +30,24 @@ $ruling-opacity: 0.6;
 }
 
 .rt-ruling__name {
-  @include multiline-text-ellipsis;
   position: absolute;
-  font-size: $fs-lg;
   bottom: 171px;
-  width: 240px;
   left: 31px;
+}
+
+.rt-ruling__name-text {
+  @include multiline-text-ellipsis;
   color: $c-white;
   font-weight: 400;
+  width: 261px;
   margin: 0;
+  font-size: $fs-lg;
 }
 
 .rt-ruling__status {
   position: absolute;
-  left: 0;
-  top: 95px;
+  left: -31px;
+  bottom: 4px;
   pointer-events: none;
 }
 
@@ -121,4 +124,22 @@ $ruling-opacity: 0.6;
 
 .rt-ruling__summary-text {
   margin: 6px;
+}
+
+@include md {
+  .rt-ruling__name {
+    bottom: 167px;
+  }
+
+  .rt-ruling__description {
+    font-size: $fs-base;
+    bottom: 126px;
+  }
+}
+
+@include lg {
+  .rt-ruling__name-text {
+    font-size: $fs-llg;
+    width: 290px;
+  }
 }

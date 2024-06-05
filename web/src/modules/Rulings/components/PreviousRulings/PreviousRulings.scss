@@ -47,6 +47,7 @@ $size: 300px;
 
   .rt-previous-rulings__item {
     width: auto;
+    height: 351px;
   }
 
   .rt-previous-rulings--list {
@@ -65,7 +66,8 @@ $size: 300px;
       background: linear-gradient(
         90deg,
         rgba(0, 0, 0, 0) 0%,
-        #808080 20%,
+        rgba(0, 0, 0, 0) 36px,
+        #808080 166px,
         #5f5f5f 50%,
         rgba(51, 51, 51, 0.6) 71.88%
       );
@@ -79,10 +81,15 @@ $size: 300px;
     }
 
     .rt-ruling__name {
+      position: static;
+    }
+
+    .rt-ruling__name-text {
       @include multiline-text-ellipsis(1);
       font-size: $fs-mlg;
-      bottom: 108px;
       left: 150px;
+      bottom: 108px;
+      position: absolute;
     }
 
     .rt-ruling__description {
@@ -90,6 +97,8 @@ $size: 300px;
       left: 150px;
       line-height: 16.8px;
       width: 342px;
+      font-size: $fs-sm;
+      line-height: 16.8px;
     }
 
     .rt-ruling__actions {
@@ -114,6 +123,94 @@ $size: 300px;
       &:hover {
         background-color: rgba(0, 0, 0, 0.6);
       }
+    }
+  }
+}
+
+@include lg {
+  .rt-previous-rulings__items {
+    gap: 27px;
+  }
+
+  .rt-previous-rulings__item {
+    width: auto;
+    height: 348px;
+  }
+
+  .rt-previous-rulings--list {
+    .rt-previous-rulings__items {
+      gap: 18px;
+    }
+
+    .rt-ruling__picture {
+      width: 267px;
+      left: 0;
+    }
+
+    .rt-ruling__shadow {
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 112px,
+        #808080 247px,
+        #5f5f5f 50%,
+        rgba(51, 51, 51, 0.6) 71.88%
+      );
+    }
+
+    .rt-ruling__last-updated {
+      font-size: $fs-base;
+      font-weight: 700;
+      right: 12px;
+    }
+
+    .rt-ruling__actions {
+      gap: 9px;
+      bottom: 79px;
+    }
+
+    .rt-icon {
+      transform: scale(1.4);
+    }
+
+    .rt-button {
+      min-height: 45px;
+
+      &.rt-button--icon {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    .rt-previous-rulings__item {
+      height: 170px;
+    }
+
+    .rt-ruling__name-text {
+      font-size: $fs-llg;
+      bottom: 115px;
+      width: 524px;
+      left: 259px;
+    }
+
+    .rt-ruling__description {
+      width: 540px;
+      font-size: $fs-md;
+      line-height: 21.6px;
+      left: 259px;
+    }
+
+    .rt-ruling__summary-caption {
+      padding: 0 18px;
+    }
+
+    .rt-ruling__summary {
+      height: 54px;
+    }
+
+    .rt-ruling__summary-text {
+      margin: 0 10px;
+      font-size: $fs-mdl;
     }
   }
 }

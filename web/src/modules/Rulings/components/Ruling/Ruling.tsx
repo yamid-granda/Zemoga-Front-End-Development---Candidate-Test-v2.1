@@ -44,7 +44,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
     size: 'sm',
     tabIndex: -1,
     role: 'presentation',
-    ...progressLeft > 0.5
+    ...progress > 0.5
       ? { icon: 'thumbs-up' }
       : { icon: 'thumbs-down', state: 'warning' },
   }
@@ -60,9 +60,13 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
       </div>
 
       <div className="rt-ruling__shadow" />
-      <h3 className="rt-ruling__name">{name}</h3>
-      <div className="rt-ruling__status">
-        <Button {...statusButtonProps} />
+      <div className="rt-ruling__name">
+        <h3 className="rt-ruling__name-text">
+          {name}
+        </h3>
+        <div className="rt-ruling__status">
+          <Button {...statusButtonProps} />
+        </div>
       </div>
       <p className="rt-ruling__description">{description}</p>
       <p className="rt-ruling__last-updated">{lastUpdatedText}</p>
