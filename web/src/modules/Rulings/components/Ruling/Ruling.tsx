@@ -80,7 +80,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
   }
 
   return (
-    <div className="rt-ruling">
+    <div className="rt-ruling" data-testid={`${name}-ruling`}>
       <div className="rt-ruling__picture">
         <img
           className="rt-ruling__picture-img"
@@ -103,6 +103,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
 
       <div className="rt-ruling__actions">
         <Button
+          data-testid="thumbs-up"
           disabled={isVoted}
           icon="thumbs-up"
           isActive={feedback === IRulingFeedback.POSITIVE}
@@ -111,6 +112,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
         />
 
         <Button
+          data-testid="thumbs-down"
           disabled={isVoted}
           icon="thumbs-down"
           isActive={feedback === IRulingFeedback.NEGATIVE}
@@ -122,6 +124,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
         </Button>
 
         <Button
+          data-testid="vote-action"
           disabled={allowsVote}
           text={isVoted ? 'Vote Again' : 'Vote Now'}
           variant="outline"
@@ -143,13 +146,19 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
         <div className="rt-ruling__summary-caption">
           <div className="rt-ruling__summary-info">
             <Icon name="thumbs-up" />
-            <span className="rt-ruling__summary-text">
+            <span
+              className="rt-ruling__summary-text"
+              data-testid="positive-percentage"
+            >
               <Percentage value={progress} />
             </span>
           </div>
 
           <div className="rt-ruling__summary-info">
-            <span className="rt-ruling__summary-text">
+            <span
+              className="rt-ruling__summary-text"
+              data-testid="negative-percentage"
+            >
               <Percentage value={progressLeft} />
             </span>
             <Icon name="thumbs-down" />
