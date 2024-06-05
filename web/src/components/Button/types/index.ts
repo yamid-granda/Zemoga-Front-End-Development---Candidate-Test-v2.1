@@ -7,5 +7,7 @@ export interface IButtonProps extends PropsWithChildren, React.HTMLAttributes<HT
   size?: 'sm'
   state?: 'warning'
   icon?: IIconName
+  disabled?: boolean
+  isActive?: boolean
   onClick?: () => void
 }

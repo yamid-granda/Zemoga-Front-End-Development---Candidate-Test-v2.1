@@ -12,6 +12,7 @@ export const Button: FunctionComponent<IButtonProps> = (props) => {
     children,
     state,
     icon,
+    isActive,
     onClick,
   } = props
 
@@ -24,6 +25,7 @@ export const Button: FunctionComponent<IButtonProps> = (props) => {
         'rt-button--sm': size === 'sm',
         'rt-button--warning': state === 'warning',
         'rt-button--icon': isIcon,
+        'rt-button--active': isActive,
       })}
       type="button"
       {...props}

@@ -1,5 +1,6 @@
 import './Ruling.scss'
 import { type FunctionComponent, useMemo, useState } from 'react'
+import { IRulingFeedback } from '@Rulings/types'
 import type { IRulingProps } from './types'
 import { getTimeAgoFromStrDate } from '@/utils/getTimeAgoFromTimestamp'
 import { Button } from '@/components/Button/Button'
@@ -17,15 +18,20 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
     votes,
   } = props
 
+  const [feedback, setFeedback] = useState<IRulingFeedback>()
   const [isVoted, setIsVoted] = useState(false)
 
   const lastUpdatedText = useMemo(() => {
+    if (isVoted)
+      return 'Thank you for voting!'
+
     const timeAgo = getTimeAgoFromStrDate(lastUpdated)
     const capitalizedCategory = category.charAt(0).toUpperCase() + category.slice(1)
     return `${timeAgo} in ${capitalizedCategory}`
   }, [
     lastUpdated,
     category,
+    isVoted,
   ])
 
   const progress: number = useMemo(() => {
@@ -36,7 +42,20 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
 
   const progressLeft: number = 1 - progress
 
-  const handleVote = () => {
+  function setPositiveFeedback() {
+    setFeedback(IRulingFeedback.POSITIVE)
+  }
+
+  function setNegativeFeedback() {
+    setFeedback(IRulingFeedback.NEGATIVE)
+  }
+
+  const allowsVote: boolean = !feedback
+
+  function handleVote() {
+    if (isVoted)
+      setFeedback(undefined)
+
     setIsVoted(!isVoted)
   }
 
@@ -73,22 +92,27 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
 
       <div className="rt-ruling__actions">
         <Button
-          size="sm"
-          onClick={handleVote}
+          disabled={isVoted}
           icon="thumbs-up"
+          isActive={feedback === IRulingFeedback.POSITIVE}
+          onClick={setPositiveFeedback}
+          size="sm"
         />
 
         <Button
+          disabled={isVoted}
+          icon="thumbs-down"
+          isActive={feedback === IRulingFeedback.NEGATIVE}
+          onClick={setNegativeFeedback}
           size="sm"
           state="warning"
-          icon="thumbs-down"
-          onClick={handleVote}
         >
           <img src="img/thumbs-down.svg" alt="thumbs down" />
         </Button>
 
         <Button
-          text="Vote Now"
+          disabled={allowsVote}
+          text={isVoted ? 'Vote Again' : 'Vote Now'}
           variant="outline"
           onClick={handleVote}
         />

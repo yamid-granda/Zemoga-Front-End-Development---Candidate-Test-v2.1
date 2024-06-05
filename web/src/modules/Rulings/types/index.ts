@@ -12,3 +12,8 @@ export interface ICelebrity {
   lastUpdated: string
   votes: ICelebrityVotesConfig
 }
+
+export enum IRulingFeedback {
+  POSITIVE = 'positive',
+  NEGATIVE = 'negative',
+}

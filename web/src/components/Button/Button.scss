@@ -21,6 +21,10 @@ $size-sm: 30px;
   &:focus {
     outline: 1px solid $c-white;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .rt-button--warning {
@@ -57,4 +61,8 @@ $size-sm: 30px;
     height: $size-sm;
     width: $size-sm;
   }
+}
+
+.rt-button--active {
+  outline: 1px solid $c-white;
 }
