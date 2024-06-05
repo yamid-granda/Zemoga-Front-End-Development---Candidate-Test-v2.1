@@ -1,3 +1,50 @@
+# Yamid Granda Code Challenge
+
+## Requirements
+
+- nodejs 20.x or higher
+- pnpm (recommended, optional) [check the official documentation](https://pnpm.io/installation)
+
+## Run the project
+
+### Install the dependencies
+
+pnpm `pnpm install`, if you prefer `npm` instead off `pnpm` go to the `/web` folder and run `npm install`
+
+### Scripts
+
+#### Using pnpm
+
+Run development environment
+
+```sh
+pnpm -F web dev
+```
+
+Run Unit tests
+
+```sh
+pnpm -F web test
+```
+
+#### Using npm
+
+Hint: remember to go to the `/web` folder
+
+Run development environment
+
+```sh
+npm run dev
+```
+
+Run Unit tests
+
+```sh
+npm run test
+```
+
+---
+
 Zemoga Front End Development - Candidate Test v2.1
 ==================================================
 
