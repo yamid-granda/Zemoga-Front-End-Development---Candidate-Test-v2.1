@@ -16,6 +16,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
     category,
     picture,
     votes,
+    onVote,
   } = props
 
   const [feedback, setFeedback] = useState<IRulingFeedback>()
@@ -38,7 +39,7 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
     const totalVotes = votes.positive + votes.negative
     const percentage = votes.positive / totalVotes
     return percentage
-  }, [votes])
+  }, [votes.positive, votes.negative])
 
   const progressLeft: number = 1 - progress
 
@@ -53,10 +54,20 @@ export const Ruling: FunctionComponent<IRulingProps> = (props) => {
   const allowsVote: boolean = !feedback
 
   function handleVote() {
-    if (isVoted)
+    if (isVoted) {
       setFeedback(undefined)
+      setIsVoted(false)
+      return
+    }
 
-    setIsVoted(!isVoted)
+    if (!feedback)
+      return
+
+    setIsVoted(true)
+    onVote?.({
+      celebrityName: name,
+      type: feedback,
+    })
   }
 
   const statusButtonProps: IButtonProps = {

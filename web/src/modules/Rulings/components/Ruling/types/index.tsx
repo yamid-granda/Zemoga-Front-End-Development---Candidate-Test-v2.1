@@ -1,3 +1,10 @@
-import type { ICelebrity } from '@Rulings/types'
+import type { ICelebrity, IRulingFeedback } from '@Rulings/types'
 
-export interface IRulingProps extends ICelebrity {}
+export interface IOnVoteEvent {
+  celebrityName: string
+  type: IRulingFeedback
+}
+
+export interface IRulingProps extends ICelebrity {
+  onVote?: (event: IOnVoteEvent) => void
+}

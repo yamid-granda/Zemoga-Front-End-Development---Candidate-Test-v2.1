@@ -12,8 +12,9 @@ export const Button: FunctionComponent<IButtonProps> = (props) => {
     children,
     state,
     icon,
-    isActive,
     onClick,
+    isActive,
+    ...buttonProps
   } = props
 
   const isIcon = Boolean(icon)
@@ -28,7 +29,7 @@ export const Button: FunctionComponent<IButtonProps> = (props) => {
         'rt-button--active': isActive,
       })}
       type="button"
-      {...props}
+      {...buttonProps}
       onClick={onClick && onClick}
     >
       {icon ? <Icon name={icon} /> : text ?? children}
