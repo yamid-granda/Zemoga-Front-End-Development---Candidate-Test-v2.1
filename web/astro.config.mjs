@@ -1,14 +1,15 @@
-import { defineConfig } from 'astro/config';
-import path, { dirname } from 'path'
-import { fileURLToPath } from 'url';
-import react from "@astrojs/react";
+import path, { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'astro/config'
+import react from '@astrojs/react'
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
+  output: 'static',
   vite: {
     resolve: {
       alias: [
@@ -24,5 +25,5 @@ export default defineConfig({
         },
       },
     },
-  }
-});
+  },
+})
